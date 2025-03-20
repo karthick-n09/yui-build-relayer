@@ -1,0 +1,1144 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "contract IIBCHandler",
+        "name": "ibcHandler_",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "port_",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCModuleChannelCloseNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "internalType": "enum Channel.Order",
+        "name": "order",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCModuleChannelOrderNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "IBCModuleInvalidSender",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20BytesSliceOutOfBounds",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20BytesSliceOverflow",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20FailedERC20Transfer",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20FailedERC20TransferFrom",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "escrow",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "denom",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20FailedRefund",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "needed",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20InsufficientBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      }
+    ],
+    "name": "ICS20InvalidReceiver",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "receiver",
+        "type": "string"
+      }
+    ],
+    "name": "ICS20InvalidReceiverAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "sender",
+        "type": "string"
+      }
+    ],
+    "name": "ICS20InvalidSenderAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      }
+    ],
+    "name": "ICS20InvalidTokenContract",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "position",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes1",
+        "name": "actual",
+        "type": "bytes1"
+      }
+    ],
+    "name": "ICS20JSONClosingBraceNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "position",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes1",
+        "name": "actual",
+        "type": "bytes1"
+      }
+    ],
+    "name": "ICS20JSONInvalidEscape",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "position",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes1",
+        "name": "actual",
+        "type": "bytes1"
+      }
+    ],
+    "name": "ICS20JSONStringClosingDoubleQuoteNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "bz",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "position",
+        "type": "uint256"
+      }
+    ],
+    "name": "ICS20JSONStringUnclosed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "position",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "ICS20JSONUnexpectedBytes",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "actual",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "expected",
+        "type": "string"
+      }
+    ],
+    "name": "ICS20UnexpectedPort",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "version",
+        "type": "string"
+      }
+    ],
+    "name": "ICS20UnexpectedVersion",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidShortString",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "str",
+        "type": "string"
+      }
+    ],
+    "name": "StringTooLong",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ICS20_VERSION",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "denom",
+        "type": "string"
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "deposit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "sourceChannel",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "receiver",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "height",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestampNanos",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICS20Lib.Timeout",
+        "name": "timeout",
+        "type": "tuple"
+      }
+    ],
+    "name": "depositSendTransfer",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "encodeAddress",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "getVoucherEscrow",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "ibcAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "sequence",
+            "type": "uint64"
+          },
+          {
+            "internalType": "string",
+            "name": "sourcePort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sourceChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationPort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "timeoutHeight",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timeoutTimestamp",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Packet",
+        "name": "packet",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "acknowledgement",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "onAcknowledgementPacket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModule.MsgOnChanCloseConfirm",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanCloseConfirm",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModule.MsgOnChanCloseInit",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanCloseInit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "counterpartyVersion",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModule.MsgOnChanOpenAck",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenAck",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModule.MsgOnChanOpenConfirm",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenConfirm",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "order",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connectionHops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "port_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "channel_id",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct ChannelCounterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModuleInitializer.MsgOnChanOpenInit",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenInit",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "order",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connectionHops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "port_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "channel_id",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct ChannelCounterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "counterpartyVersion",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModuleInitializer.MsgOnChanOpenTry",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenTry",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "sequence",
+            "type": "uint64"
+          },
+          {
+            "internalType": "string",
+            "name": "sourcePort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sourceChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationPort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "timeoutHeight",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timeoutTimestamp",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Packet",
+        "name": "packet",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "onRecvPacket",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "acknowledgement",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "sequence",
+            "type": "uint64"
+          },
+          {
+            "internalType": "string",
+            "name": "sourcePort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sourceChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationPort",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "destinationChannel",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "timeoutHeight",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timeoutTimestamp",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Packet",
+        "name": "packet",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "onTimeoutPacket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "sourceChannel",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "denom",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "receiver",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "height",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestampNanos",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICS20Lib.Timeout",
+        "name": "timeout",
+        "type": "tuple"
+      }
+    ],
+    "name": "sendTransfer",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "denom",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

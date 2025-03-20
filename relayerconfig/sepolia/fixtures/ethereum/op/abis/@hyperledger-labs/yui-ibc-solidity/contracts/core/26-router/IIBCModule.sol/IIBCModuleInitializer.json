@@ -1,0 +1,157 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "order",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connectionHops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "port_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "channel_id",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct ChannelCounterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModuleInitializer.MsgOnChanOpenInit",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenInit",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "order",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connectionHops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "port_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "channel_id",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct ChannelCounterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "counterpartyVersion",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IIBCModuleInitializer.MsgOnChanOpenTry",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "onChanOpenTry",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

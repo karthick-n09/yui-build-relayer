@@ -1,0 +1,189 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "allowTransitionToFlushComplete",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "getUpgradeProposal",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "enum Channel.Order",
+                "name": "ordering",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string[]",
+                "name": "connection_hops",
+                "type": "string[]"
+              },
+              {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct UpgradeFields.Data",
+            "name": "fields",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_number",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_height",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct Height.Data",
+                "name": "height",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Timeout.Data",
+            "name": "timeout",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IIBCChannelUpgradableModule.UpgradeProposal",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "ordering",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connection_hops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct UpgradeFields.Data",
+        "name": "upgradeFields",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "height",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Timeout.Data",
+        "name": "timeout",
+        "type": "tuple"
+      }
+    ],
+    "name": "proposeUpgrade",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "removeUpgradeProposal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

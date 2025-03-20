@@ -1,0 +1,43 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "clientId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "protoClientMessage",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCClient.MsgUpdateClient",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "wrappedRouteUpdateClient",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

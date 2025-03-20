@@ -1,0 +1,188 @@
+[
+  {
+    "inputs": [],
+    "name": "IBCConnectionAlreadyConnectionExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionEmptyConnectionCounterpartyVersions",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyClientConsensusState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyClientState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyConnectionState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionIBCVersionNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "counterpartyConnectionId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCConnectionInvalidCounterpartyConnectionIdentifier",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionInvalidHostConsensusStateProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionInvalidSelfClientState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionNoMatchingVersionFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum ConnectionEnd.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCConnectionUnexpectedConnectionState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionVersionsAlreadySet",
+    "type": "error"
+  }
+]

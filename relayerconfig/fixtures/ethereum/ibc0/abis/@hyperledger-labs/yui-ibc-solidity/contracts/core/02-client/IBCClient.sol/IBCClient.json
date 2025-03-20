@@ -1,0 +1,402 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCClientClientNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "consensusHeight",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCClientConsensusStateNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      },
+      {
+        "internalType": "bytes",
+        "name": "args",
+        "type": "bytes"
+      }
+    ],
+    "name": "IBCClientFailedUpdateClient",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCClientNotActiveClient",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      }
+    ],
+    "name": "IBCClientUnregisteredClientType",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostChannelCapabilityAlreadyClaimed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostClientTypeAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostFailedAuthenticateChannelCapability",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostInvalidClientType",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lcAddress",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostInvalidLightClientAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "moduleAddress",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostInvalidModuleAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostInvalidPortIdentifier",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostModuleChannelNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCHostModuleDoesNotSupportERC165",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModule",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModuleInitializer",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModuleUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostModulePortNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostPortCapabilityAlreadyClaimed",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      }
+    ],
+    "name": "GeneratedClientIdentifier",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "clientType",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "protoClientState",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "protoConsensusState",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCClient.MsgCreateClient",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "createClient",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "clientId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "protoClientMessage",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCClient.MsgUpdateClient",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "routeUpdateClient",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "clientId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "protoClientMessage",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCClient.MsgUpdateClient",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "updateClient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data[]",
+        "name": "heights",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "updateClientCommitments",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

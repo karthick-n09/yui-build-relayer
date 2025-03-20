@@ -1,0 +1,1 @@
+{"key":"testkey","chain-id":"sepolia","rpc-addr":"http://localhost:8645","account-prefix":"tki","gas-adjustment":1.5,"gas-prices":"0.001utki","trusting-period":"503h"}

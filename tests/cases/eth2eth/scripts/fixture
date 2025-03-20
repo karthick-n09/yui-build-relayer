@@ -17,11 +17,11 @@ mkdir -p ${FIXTURES_DIR}/ethereum/ibc1
 set -x
 
 # retrieve the contract information from the container to the local
-${DOCKER} cp ethereum-geth0:/root/abis ${FIXTURES_DIR}/ethereum/ibc0/abis
-${DOCKER} cp ethereum-geth1:/root/abis ${FIXTURES_DIR}/ethereum/ibc1/abis
+${DOCKER} cp ethereum-geth0-scaffold:/root/abis ${FIXTURES_DIR}/ethereum/ibc0/abis
+${DOCKER} cp ethereum-geth1-scaffold:/root/abis ${FIXTURES_DIR}/ethereum/ibc1/abis
 
-${DOCKER} cp ethereum-geth0:/root/addresses ${FIXTURES_DIR}/ethereum/ibc0/addresses
-${DOCKER} cp ethereum-geth1:/root/addresses ${FIXTURES_DIR}/ethereum/ibc1/addresses
+${DOCKER} cp ethereum-geth0-scaffold:/root/addresses ${FIXTURES_DIR}/ethereum/ibc0/addresses
+${DOCKER} cp ethereum-geth1-scaffold:/root/addresses ${FIXTURES_DIR}/ethereum/ibc1/addresses
 
 # assign the contract address to ChainConfig
 mkdir -p "$CONF_DIR/chains"

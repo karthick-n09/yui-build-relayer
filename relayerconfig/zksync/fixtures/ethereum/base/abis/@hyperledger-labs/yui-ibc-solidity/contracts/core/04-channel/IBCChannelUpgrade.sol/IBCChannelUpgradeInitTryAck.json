@@ -1,0 +1,1837 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "ackStartSequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelAckAlreadyProcessedInPreviousUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "destinationPort",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "destinationChannel",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelAcknowledgementAlreadyWritten",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "counterpartyNextSequenceSend",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelCannotRecvNextUpgradePacket",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCChannelChannelNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.Order",
+        "name": "ordering",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelConnectionFeatureNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "connectionId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      }
+    ],
+    "name": "IBCChannelConnectionMultipleVersionsFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "connectionId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCChannelConnectionNotOpened",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "counterpartyChannelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCChannelCounterpartyChannelIdNotEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelEmptyAcknowledgement",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelFailedVerifyChannelState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint64",
+        "name": "nextSequenceRecv",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelFailedVerifyNextSequenceRecv",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "commitment",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelFailedVerifyPacketAcknowledgement",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "commitment",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelFailedVerifyPacketCommitment",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelFailedVerifyPacketReceiptAbsence",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      }
+    ],
+    "name": "IBCChannelInvalidConnectionHopsLength",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "recvStartSequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelPacketAlreadyProcessInPreviousUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "IBCChannelPacketCommitmentMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelPacketCommitmentNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "nextSequenceRecv",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelPacketMaybeAlreadyReceived",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "destinationPort",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "destinationChannel",
+        "type": "string"
+      },
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelPacketReceiptAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "timeoutHeight",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "latestHeight",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelPastPacketTimeoutHeight",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "timeoutTimestamp",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "latestTimestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelPastPacketTimeoutTimestamp",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelTimeoutNotReached",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "currentBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "timeoutHeight",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelTimeoutPacketHeight",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "currentTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "timeoutTimestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelTimeoutPacketTimestamp",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUnexpectedChannelState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expected",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelUnexpectedNextSequenceAck",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expected",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelUnexpectedNextSequenceRecv",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "destinationPort",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "destinationChannel",
+        "type": "string"
+      }
+    ],
+    "name": "IBCChannelUnexpectedPacketDestination",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "sourcePort",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "sourceChannel",
+        "type": "string"
+      }
+    ],
+    "name": "IBCChannelUnexpectedPacketSource",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.Order",
+        "name": "ordering",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUnknownChannelOrder",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitment",
+        "type": "bytes32"
+      }
+    ],
+    "name": "IBCChannelUnknownPacketReceiptCommitment",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeCounterpartyAlreadyFlushCompleted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeCounterpartyAlreadyUpgraded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeCounterpartyNotFlushingOrFlushcomplete",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeCounterpartyNotOpenOrFlushcomplete",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeErrorReceiptEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCChannelUpgradeFailedVerifyMembership",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeIncompatibleProposal",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeInvalidErrorReceiptSequence",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeInvalidTimeout",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeInvalidUpgradeFields",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeNoChanges",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeNoExistingUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeNotFlushcomplete",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeNotFlushing",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeNotOpenOrFlushing",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeOldCounterpartyUpgradeSequence",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeOldErrorReceiptSequence",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeTimeoutHeightNotReached",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeTimeoutTimestampNotReached",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeTimeoutUnallowedState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeTryProposedConnectionHopsEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradeTryProposedConnectionHopsMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "upgrader",
+        "type": "address"
+      }
+    ],
+    "name": "IBCChannelUpgradeUnauthorizedChannelUpgrader",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.Order",
+        "name": "ordering",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradeUnsupportedOrdering",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "latestSequence",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "sequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelUpgradeWriteOldErrorReceiptSequence",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelZeroPacketTimeout",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionAlreadyConnectionExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionEmptyConnectionCounterpartyVersions",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyClientConsensusState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyClientState",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientId",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "path",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "value",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "revision_number",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "revision_height",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct Height.Data",
+        "name": "height",
+        "type": "tuple"
+      }
+    ],
+    "name": "IBCConnectionFailedVerifyConnectionState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionIBCVersionNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "counterpartyConnectionId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCConnectionInvalidCounterpartyConnectionIdentifier",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionInvalidHostConsensusStateProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionInvalidSelfClientState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionNoMatchingVersionFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum ConnectionEnd.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCConnectionUnexpectedConnectionState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCConnectionVersionsAlreadySet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostChannelCapabilityAlreadyClaimed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostClientTypeAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostFailedAuthenticateChannelCapability",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostInvalidClientType",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lcAddress",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostInvalidLightClientAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "moduleAddress",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostInvalidModuleAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostInvalidPortIdentifier",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostModuleChannelNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCHostModuleDoesNotSupportERC165",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModule",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModuleInitializer",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      }
+    ],
+    "name": "IBCHostModuleDoesNotSupportIIBCModuleUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostModulePortNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCHostPortCapabilityAlreadyClaimed",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum Channel.State",
+        "name": "channelState",
+        "type": "uint8"
+      },
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "ordering",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connection_hops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct UpgradeFields.Data",
+        "name": "upgradeFields",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "height",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct Timeout.Data",
+        "name": "timeout",
+        "type": "tuple"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "nextSequenceSend",
+        "type": "uint64"
+      }
+    ],
+    "name": "ChannelUpgradeAck",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum Channel.State",
+        "name": "channelState",
+        "type": "uint8"
+      }
+    ],
+    "name": "ChannelUpgradeConfirm",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "ordering",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connection_hops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct UpgradeFields.Data",
+        "name": "proposedUpgradeFields",
+        "type": "tuple"
+      }
+    ],
+    "name": "ChannelUpgradeInit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      }
+    ],
+    "name": "ChannelUpgradeOpen",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          {
+            "internalType": "enum Channel.Order",
+            "name": "ordering",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string[]",
+            "name": "connection_hops",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "version",
+            "type": "string"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct UpgradeFields.Data",
+        "name": "upgradeFields",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "height",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct Timeout.Data",
+        "name": "timeout",
+        "type": "tuple"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "nextSequenceSend",
+        "type": "uint64"
+      }
+    ],
+    "name": "ChannelUpgradeTry",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      }
+    ],
+    "name": "IBCModuleManagerChannelCapabilityClaimed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "module",
+        "type": "address"
+      }
+    ],
+    "name": "IBCModuleManagerPortCapabilityClaimed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "upgradeSequence",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "message",
+        "type": "string"
+      }
+    ],
+    "name": "WriteErrorReceipt",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "enum Channel.Order",
+                    "name": "ordering",
+                    "type": "uint8"
+                  },
+                  {
+                    "internalType": "string[]",
+                    "name": "connection_hops",
+                    "type": "string[]"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "version",
+                    "type": "string"
+                  }
+                ],
+                "internalType": "struct UpgradeFields.Data",
+                "name": "fields",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "components": [
+                      {
+                        "internalType": "uint64",
+                        "name": "revision_number",
+                        "type": "uint64"
+                      },
+                      {
+                        "internalType": "uint64",
+                        "name": "revision_height",
+                        "type": "uint64"
+                      }
+                    ],
+                    "internalType": "struct Height.Data",
+                    "name": "height",
+                    "type": "tuple"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "timestamp",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct Timeout.Data",
+                "name": "timeout",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint64",
+                "name": "next_sequence_send",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Upgrade.Data",
+            "name": "counterpartyUpgrade",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes",
+                "name": "proofChannel",
+                "type": "bytes"
+              },
+              {
+                "internalType": "bytes",
+                "name": "proofUpgrade",
+                "type": "bytes"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_number",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_height",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct Height.Data",
+                "name": "proofHeight",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IIBCChannelUpgradeBase.ChannelUpgradeProofs",
+            "name": "proofs",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IIBCChannelUpgradeBase.MsgChannelUpgradeAck",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "channelUpgradeAck",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Channel.Order",
+                "name": "ordering",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string[]",
+                "name": "connection_hops",
+                "type": "string[]"
+              },
+              {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct UpgradeFields.Data",
+            "name": "proposedUpgradeFields",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IIBCChannelUpgradeBase.MsgChannelUpgradeInit",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "channelUpgradeInit",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "portId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "channelId",
+            "type": "string"
+          },
+          {
+            "internalType": "uint64",
+            "name": "counterpartyUpgradeSequence",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "enum Channel.Order",
+                "name": "ordering",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string[]",
+                "name": "connection_hops",
+                "type": "string[]"
+              },
+              {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct UpgradeFields.Data",
+            "name": "counterpartyUpgradeFields",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string[]",
+            "name": "proposedConnectionHops",
+            "type": "string[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes",
+                "name": "proofChannel",
+                "type": "bytes"
+              },
+              {
+                "internalType": "bytes",
+                "name": "proofUpgrade",
+                "type": "bytes"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_number",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "revision_height",
+                    "type": "uint64"
+                  }
+                ],
+                "internalType": "struct Height.Data",
+                "name": "proofHeight",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct IIBCChannelUpgradeBase.ChannelUpgradeProofs",
+            "name": "proofs",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IIBCChannelUpgradeBase.MsgChannelUpgradeTry",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "channelUpgradeTry",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

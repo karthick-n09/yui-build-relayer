@@ -1,0 +1,110 @@
+{
+    "global": {
+        "timeout": "10s",
+        "light-cache-size": 20,
+        "logger": {
+            "level": "DEBUG",
+            "format": "json",
+            "output": "stderr"
+        }
+    },
+    "chains": [
+        {
+            "chain": {
+                "@type": "/relayer.chains.ethereum.config.ChainConfig",
+                "chain_id": "base",
+                "eth_chain_id": 84532,
+                "rpc_addr": "https://base-sepolia.g.alchemy.com/v2/06FpnU4zuFmBgqTE-ziJPggMOEGlQ6mw",
+                "signer": {
+                    "@type": "/relayer.signers.hd.SignerConfig",
+                    "mnemonic": "grief fire stick flock hidden unit creek result sing income equal sunset",
+                    "path": "m/44'/60'/0'/0/0"
+                },
+                "ibc_address": "0xBf51FefF665d9520B514860bD1D06507b0B7164D",
+                "multicall3_address": "0x381885C801566D4EF11B684FfFF0f8ba025Ee37D",
+                "initial_send_checkpoint": 1,
+                "initial_recv_checkpoint": 1,
+                "enable_debug_trace": true,
+                "average_block_time_msec": 1000,
+                "max_retry_for_inclusion": 5,
+                "gas_estimate_rate": {
+                    "numerator": 3,
+                    "denominator": 2
+                },
+                "max_gas_limit": 10000000,
+                "tx_type": "auto",
+                "blocks_per_event_query": 1000,
+                "abi_paths": [
+                    "relayerconfig/sepolia/fixtures/ethereum/base/abis"
+                ],
+                "price_bump": 10
+            },
+            "prover": {
+                "@type": "/relayer.provers.mock.config.ProverConfig",
+                "finality_delay": 3
+            }
+        },
+        {
+            "chain": {
+                "@type": "/relayer.chains.ethereum.config.ChainConfig",
+                "chain_id": "optimism",
+                "eth_chain_id": 11155420,
+                "rpc_addr": "https://opt-sepolia.g.alchemy.com/v2/06FpnU4zuFmBgqTE-ziJPggMOEGlQ6mw",
+                "signer": {
+                    "@type": "/relayer.signers.hd.SignerConfig",
+                    "mnemonic": "grief fire stick flock hidden unit creek result sing income equal sunset",
+                    "path": "m/44'/60'/0'/0/0"
+                },
+                "ibc_address": "0x2218C356baB38B56b877bc22271307d17A539356",
+                "multicall3_address": "0xcF6F98c014c0C68caa35dba091ED538d977e2C73",
+                "initial_send_checkpoint": 1,
+                "initial_recv_checkpoint": 1,
+                "enable_debug_trace": true,
+                "average_block_time_msec": 1000,
+                "max_retry_for_inclusion": 5,
+                "gas_estimate_rate": {
+                    "numerator": 3,
+                    "denominator": 2
+                },
+                "max_gas_limit": 10000000,
+                "tx_type": "auto",
+                "blocks_per_event_query": 1000,
+                "abi_paths": [
+                    "relayerconfig/sepolia/fixtures/ethereum/op/abis"
+                ],
+                "price_bump": 10
+            },
+            "prover": {
+                "@type": "/relayer.provers.mock.config.ProverConfig",
+                "finality_delay": 3
+            }
+        }
+    ],
+    "paths": {
+        "op-base": {
+            "src": {
+                "chain-id": "optimism",
+                "client-id": "mock-client-4",
+                "connection-id": "connection-1",
+                "channel-id": "channel-1",
+                "port-id": "mockapp",
+                "order": "unordered",
+                "version": "mockapp-1"
+            },
+            "dst": {
+                "chain-id": "base",
+                "client-id": "mock-client-1",
+                "connection-id": "connection-1",
+                "channel-id": "channel-1",
+                "port-id": "mockapp",
+                "order": "unordered",
+                "version": "mockapp-1"
+            },
+            "strategy": {
+                "type": "naive",
+                "src-noack": false,
+                "dst-noack": false
+            }
+        }
+    }
+}

@@ -50,9 +50,11 @@ services:
 # Ethereum
   ethereum-geth0:
     container_name: ethereum-geth0
-    image: ethereum-geth0:${TAG}
+   # image: ethereum-geth0:${TAG}
+    image: ethereum/client-go
     ports:
       - 8645:8545
+    command: --http
     healthcheck:
       test: "wget -q -O - http://localhost:8545/health || exit 1"
       interval: 30s
@@ -62,7 +64,8 @@ services:
       - *network-common
   ethereum-geth1:
     container_name: ethereum-geth1
-    image: ethereum-geth1:${TAG}
+   # image: ethereum-geth1:${TAG}
+    image: ethereum/client-go
     ports:
       - 8745:8545
     healthcheck:

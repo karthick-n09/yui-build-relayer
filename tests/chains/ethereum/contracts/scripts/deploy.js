@@ -1,8 +1,14 @@
-function saveAddress(contractName, contract) {
+const { network } = require("hardhat");
+const hre = require("hardhat");
+
+async function saveAddress(contractName, contract) {
   const fs = require("fs");
   const path = require("path");
+  
+  console.log("test : chainid : ", (await hre.ethers.provider.getNetwork()).chainId.toString())
+  // const dirpath = path.join("addresses", network.config.chainId);
+  const dirpath = path.join("addresses", (await hre.ethers.provider.getNetwork()).chainId.toString());
 
-  const dirpath = path.join("addresses", network.config.chainId.toString());
   if (!fs.existsSync(dirpath)) {
     fs.mkdirSync(dirpath, {recursive: true});
   }
@@ -14,8 +20,12 @@ function saveAddress(contractName, contract) {
 }
 
 async function deploy(deployer, contractName, args = []) {
+  console.log("function called ");
+  // console.log("deployer function : " + contractName + " : " + deployer.address)
   const factory = await hre.ethers.getContractFactory(contractName);
-  const contract = await factory.connect(deployer).deploy(...args);
+  console.log(factory.interface)
+  const contract = await factory.deploy(...args)
+  // const contract = await factory.connect(deployer).deploy(...args);
   await contract.waitForDeployment();
   return contract;
 }
@@ -82,6 +92,7 @@ async function deployApp(deployer, ibcHandler) {
   saveAddress("AppV1", proxyV1);
 
   for (let i = 2; i <= 10; i++) {
+  // for (let i = 2; i <= 3; i++) {
     const contractName = `AppV${i}`;
     const impl = await prepareImplementation(deployer, proxyV1, contractName, [ibcHandler.target], unsafeAllow);
     saveAddress(contractName, impl);
@@ -112,24 +123,32 @@ async function main() {
     "Deploying the contracts with the account:",
     await deployer.getAddress()
   );
-  console.log("Account balance:", (await hre.ethers.provider.getBalance(deployer.getAddress())).toString());
+  console.log("Account balance:", (await hre.ethers.provider.getBalance(deployer.getAddress())));
+  console.log("Chain id : ", (await deployer.provider.getNetwork()).chainId);
 
   const ibcHandler = await deployIBC(deployer);
+  console.log("IBCHander contract deployed at : ", ibcHandler.target);
   saveAddress("IBCHandler", ibcHandler);
 
   const erc20token = await deploy(deployer, "ERC20Token", ["simple", "simple", 1000000]);
   saveAddress("ERC20Token", erc20token);
+  console.log("ERC20Token contract deployed at : ", erc20token);
 
   const ics20transfer = await deploy(deployer, "ICS20Transfer", [ibcHandler.target, "transfer"]);
   saveAddress("ICS20Transfer", ics20transfer);
+  console.log("ICS20Transfer contract deployed at : ", ics20transfer.target)
 
+  console.log("test : before");
   const app = await deployApp(deployer, ibcHandler);
+  console.log("test : after");
 
   const mockClient = await deploy(deployer, "MockClient", [ibcHandler.target]);
   saveAddress("MockClient", mockClient);
+  console.log("MockClient deployed at : ", mockClient.target)
 
   const multicall3 = await deploy(deployer, "Multicall3", []);
   saveAddress("Multicall3", multicall3);
+  console.log("mulitcall3 deployed at : ", multicall3.target)
 
   await ibcHandler.bindPort("transfer", ics20transfer.target);
   await ibcHandler.bindPort("mockapp", app.target);

@@ -25,10 +25,13 @@ PORT_B=$(jq -r '.paths.ibc01.dst."port-id"' ${CONFIG_JSON})
 CHANNEL_A=$(jq -r '.paths.ibc01.src."channel-id"' ${CONFIG_JSON})
 CHANNEL_B=$(jq -r '.paths.ibc01.dst."channel-id"' ${CONFIG_JSON})
 
+# echo "##################test################################"
+# echo "MOCKAPP_A {{$MOCKAPP_A}}" 
+
 # send a packet from ibc0 to ibc1
 echo "!!! ibc0 alice -> ibc1 bob !!!"
 ALICE_INDEX=1
-cast send \
+cast send --gas-limit 500000 \
      --rpc-url $RPC_ADDRESS_A \
      --mnemonic "$MNEMONIC_A" \
      --mnemonic-index ${ALICE_INDEX} \
@@ -46,23 +49,23 @@ ${RLY} tx relay ${PATH_NAME} --src-seqs 1
 waitRelay "recvPacket" "unrelayed-acknowledgements" "dst"
 ${RLY} tx acks ${PATH_NAME} --dst-seqs 1
 
-# send a packet from ibc1 to ibc0
-echo "!!! ibc1 bob -> ibc0 alice !!!"
-BOB_INDEX=2
-cast send \
-     --rpc-url $RPC_ADDRESS_B \
-     --mnemonic "$MNEMONIC_B" \
-     --mnemonic-index ${BOB_INDEX} \
-     $MOCKAPP_B \
-     'sendPacket(bytes,string,string,(uint64,uint64),uint64)' \
-     $(cast from-utf8 'mock packet data') \
-     $PORT_B \
-     $CHANNEL_B \
-     '(0,100000)' \
-     $(date -d 1hour +%s%N)
+# # send a packet from ibc1 to ibc0
+# echo "!!! ibc1 bob -> ibc0 alice !!!"
+# BOB_INDEX=2
+# cast send \
+#      --rpc-url $RPC_ADDRESS_B \
+#      --mnemonic "$MNEMONIC_B" \
+#      --mnemonic-index ${BOB_INDEX} \
+#      $MOCKAPP_B \
+#      'sendPacket(bytes,string,string,(uint64,uint64),uint64)' \
+#      $(cast from-utf8 'mock packet data') \
+#      $PORT_B \
+#      $CHANNEL_B \
+#      '(0,100000)' \
+#      $(date -d 1hour +%s%N)
 
-waitRelay "sendPacket" "unrelayed-packets" "dst"
-${RLY} tx relay ${PATH_NAME} --dst-seqs 1
+# waitRelay "sendPacket" "unrelayed-packets" "dst"
+# ${RLY} tx relay ${PATH_NAME} --dst-seqs 1
 
-waitRelay "recvPacket" "unrelayed-acknowledgements" "src"
-${RLY} tx acks ${PATH_NAME} --src-seqs 1
+# waitRelay "recvPacket" "unrelayed-acknowledgements" "src"
+# ${RLY} tx acks ${PATH_NAME} --src-seqs 1

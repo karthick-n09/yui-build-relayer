@@ -1,0 +1,45 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "actual",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "expected",
+        "type": "bytes"
+      }
+    ],
+    "name": "IBCMockUnexpectedAcknowledgement",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "actual",
+        "type": "bytes"
+      }
+    ],
+    "name": "IBCMockUnexpectedPacket",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "actual",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "expected",
+        "type": "string"
+      }
+    ],
+    "name": "IBCMockUnexpectedVersion",
+    "type": "error"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "inputs": [],
+    "name": "IBCContractUpgradableModuleAlreadyConsumedAppInfo",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCContractUpgradableModuleAppInfoIsAlreadySet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCContractUpgradableModuleAppInfoNotProposedYet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCContractUpgradableModuleAppInfoProposedWithZeroImpl",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "channelId",
+        "type": "string"
+      }
+    ],
+    "name": "IBCContractUpgradableModuleChannelNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "msgSender",
+        "type": "address"
+      }
+    ],
+    "name": "IBCContractUpgradableModuleUnauthorizedUpgrader",
+    "type": "error"
+  }
+]

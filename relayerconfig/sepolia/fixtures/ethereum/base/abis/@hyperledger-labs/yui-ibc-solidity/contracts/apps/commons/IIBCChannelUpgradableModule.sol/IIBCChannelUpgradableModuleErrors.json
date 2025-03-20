@@ -1,0 +1,69 @@
+[
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleCannotOverwriteUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleCannotRemoveInProgressUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum Channel.State",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "name": "IBCChannelUpgradableModuleChannelNotFlushingState",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleChannelNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleInvalidConnectionHops",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleInvalidTimeout",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleInvalidUpgrade",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "actual",
+        "type": "uint64"
+      }
+    ],
+    "name": "IBCChannelUpgradableModuleSequenceMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleUnauthorizedUpgrader",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleUpgradeAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IBCChannelUpgradableModuleUpgradeNotFound",
+    "type": "error"
+  }
+]

@@ -21,6 +21,11 @@ PATH_NAME=ibc01
 RETRY_COUNT=5
 RETRY_INTERVAL=1
 
+# echo "{$SCRIPT_DIR}"
+# echo "{$DEMO_DIR}"
+# echo "{$RELAYER_CONF}"
+
+
 waitRelay() {
   label=$1
   query_type=$2

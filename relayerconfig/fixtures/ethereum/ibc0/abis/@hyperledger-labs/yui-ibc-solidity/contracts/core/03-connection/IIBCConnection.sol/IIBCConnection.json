@@ -1,0 +1,371 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "connectionId",
+        "type": "string"
+      }
+    ],
+    "name": "GeneratedConnectionIdentifier",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "connectionId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "clientStateBytes",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "identifier",
+                "type": "string"
+              },
+              {
+                "internalType": "string[]",
+                "name": "features",
+                "type": "string[]"
+              }
+            ],
+            "internalType": "struct Version.Data",
+            "name": "version",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "counterpartyConnectionId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofTry",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofClient",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofConsensus",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "proofHeight",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "consensusHeight",
+            "type": "tuple"
+          },
+          {
+            "internalType": "bytes",
+            "name": "hostConsensusStateProof",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCConnection.MsgConnectionOpenAck",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "connectionOpenAck",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "connectionId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofAck",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "proofHeight",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct IIBCConnection.MsgConnectionOpenConfirm",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "connectionOpenConfirm",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "clientId",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "client_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "connection_id",
+                "type": "string"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes",
+                    "name": "key_prefix",
+                    "type": "bytes"
+                  }
+                ],
+                "internalType": "struct MerklePrefix.Data",
+                "name": "prefix",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct Counterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "identifier",
+                "type": "string"
+              },
+              {
+                "internalType": "string[]",
+                "name": "features",
+                "type": "string[]"
+              }
+            ],
+            "internalType": "struct Version.Data",
+            "name": "version",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "delayPeriod",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IIBCConnection.MsgConnectionOpenInit",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "connectionOpenInit",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "connectionId",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "client_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "connection_id",
+                "type": "string"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bytes",
+                    "name": "key_prefix",
+                    "type": "bytes"
+                  }
+                ],
+                "internalType": "struct MerklePrefix.Data",
+                "name": "prefix",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct Counterparty.Data",
+            "name": "counterparty",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "delayPeriod",
+            "type": "uint64"
+          },
+          {
+            "internalType": "string",
+            "name": "clientId",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes",
+            "name": "clientStateBytes",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "identifier",
+                "type": "string"
+              },
+              {
+                "internalType": "string[]",
+                "name": "features",
+                "type": "string[]"
+              }
+            ],
+            "internalType": "struct Version.Data[]",
+            "name": "counterpartyVersions",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofInit",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofClient",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "proofConsensus",
+            "type": "bytes"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "proofHeight",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "revision_number",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "revision_height",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct Height.Data",
+            "name": "consensusHeight",
+            "type": "tuple"
+          },
+          {
+            "internalType": "bytes",
+            "name": "hostConsensusStateProof",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IIBCConnection.MsgConnectionOpenTry",
+        "name": "msg_",
+        "type": "tuple"
+      }
+    ],
+    "name": "connectionOpenTry",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

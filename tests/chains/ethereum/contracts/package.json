@@ -6,8 +6,11 @@
   "devDependencies": {
     "@datachainlab/ethereum-ibc-relay-chain": "git+https://github.com/datachainlab/ethereum-ibc-relay-chain.git#semver:v0.3.12",
     "@hyperledger-labs/yui-ibc-solidity": "git+https://github.com/hyperledger-labs/yui-ibc-solidity.git#semver:v0.3.39",
+    "@matterlabs/hardhat-zksync-deploy": "^1.6.0",
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@openzeppelin/hardhat-upgrades": "^3.2.1",
-    "hardhat": "^2.19.1"
+    "ethers": "^6.13.5",
+    "hardhat": "^2.19.1",
+    "zksync-ethers": "^6.16.1"
   }
 }

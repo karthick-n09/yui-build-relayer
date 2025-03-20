@@ -1,0 +1,51 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "portId",
+        "type": "string"
+      },
+      {
+        "internalType": "contract IIBCModuleInitializer",
+        "name": "moduleAddress",
+        "type": "address"
+      }
+    ],
+    "name": "bindPort",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "clientType",
+        "type": "string"
+      },
+      {
+        "internalType": "contract ILightClient",
+        "name": "client",
+        "type": "address"
+      }
+    ],
+    "name": "registerClient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expectedTimePerBlock_",
+        "type": "uint64"
+      }
+    ],
+    "name": "setExpectedTimePerBlock",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

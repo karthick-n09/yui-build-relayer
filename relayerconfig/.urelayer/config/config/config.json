@@ -1,0 +1,110 @@
+{
+    "global": {
+        "timeout": "10s",
+        "light-cache-size": 20,
+        "logger": {
+            "level": "DEBUG",
+            "format": "json",
+            "output": "stderr"
+        }
+    },
+    "chains": [
+        {
+            "chain": {
+                "@type": "/relayer.chains.ethereum.config.ChainConfig",
+                "chain_id": "ibc0",
+                "eth_chain_id": 2018,
+                "rpc_addr": "http://localhost:8645",
+                "signer": {
+                    "@type": "/relayer.signers.hd.SignerConfig",
+                    "mnemonic": "math razor capable expose worth grape metal sunset metal sudden usage scheme",
+                    "path": "m/44'/60'/0'/0/0"
+                },
+                "ibc_address": "0x94872f303a5c0f5afc20470A3De17198250A169b",
+                "multicall3_address": "0xdeE02b734359d7E53F1EF178d94e680e114EabFE",
+                "initial_send_checkpoint": 1,
+                "initial_recv_checkpoint": 1,
+                "enable_debug_trace": true,
+                "average_block_time_msec": 1000,
+                "max_retry_for_inclusion": 5,
+                "gas_estimate_rate": {
+                    "numerator": 3,
+                    "denominator": 2
+                },
+                "max_gas_limit": 10000000,
+                "tx_type": "auto",
+                "blocks_per_event_query": 1000,
+                "abi_paths": [
+                    "relayerconfig/fixtures/ethereum/ibc0/abis"
+                ],
+                "price_bump": 10
+            },
+            "prover": {
+                "@type": "/relayer.provers.mock.config.ProverConfig",
+                "finality_delay": 3
+            }
+        },
+        {
+            "chain": {
+                "@type": "/relayer.chains.ethereum.config.ChainConfig",
+                "chain_id": "ibc1",
+                "eth_chain_id": 2019,
+                "rpc_addr": "http://localhost:8745",
+                "signer": {
+                    "@type": "/relayer.signers.hd.SignerConfig",
+                    "mnemonic": "math razor capable expose worth grape metal sunset metal sudden usage scheme",
+                    "path": "m/44'/60'/0'/0/0"
+                },
+                "ibc_address": "0xE6ea3b07bB7a205CF9fBf219B7C37dE74Ee81490",
+                "multicall3_address": "0x344B67A08484b437C8FeD8880E60DaAF5Fe06cb7",
+                "initial_send_checkpoint": 1,
+                "initial_recv_checkpoint": 1,
+                "enable_debug_trace": true,
+                "average_block_time_msec": 1000,
+                "max_retry_for_inclusion": 5,
+                "gas_estimate_rate": {
+                    "numerator": 3,
+                    "denominator": 2
+                },
+                "max_gas_limit": 10000000,
+                "tx_type": "auto",
+                "blocks_per_event_query": 1000,
+                "abi_paths": [
+                    "relayerconfig/fixtures/ethereum/ibc1/abis"
+                ],
+                "price_bump": 10
+            },
+            "prover": {
+                "@type": "/relayer.provers.mock.config.ProverConfig",
+                "finality_delay": 3
+            }
+        }
+    ],
+    "paths": {
+        "ibc01": {
+            "src": {
+                "chain-id": "ibc0",
+                "client-id": "mock-client-1",
+                "connection-id": "connection-1",
+                "channel-id": "channel-1",
+                "port-id": "mockapp",
+                "order": "unordered",
+                "version": "mockapp-1"
+            },
+            "dst": {
+                "chain-id": "ibc1",
+                "client-id": "mock-client-1",
+                "connection-id": "connection-1",
+                "channel-id": "channel-1",
+                "port-id": "mockapp",
+                "order": "unordered",
+                "version": "mockapp-1"
+            },
+            "strategy": {
+                "type": "naive",
+                "src-noack": false,
+                "dst-noack": false
+            }
+        }
+    }
+}
